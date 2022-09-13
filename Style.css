@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: rgb(207, 232, 253);
+}
+
+.container {
+  padding-top: 2%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100%;
+  background-color: rgb(229, 230, 228);
+}
+
+.container textarea {
+  resize: none;
+}
+
+.container #textbox1 {
+  width: min-content;
+  margin: auto;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+.wrapper #arrow {
+  justify-self: center;
+  font-size: large;
+  height: 30px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.container textarea {
+  margin: auto;
+  width: min-content;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 15px;
+}
+
+#savebtn {
+  width: 8vw;
+  min-width: 5vw;
+  display: block;
+  background-color: rgb(179, 240, 240);
+  margin-left: 52%;
+  border-radius: 5px;
+}
+
+#savebtn:hover {
+  background-color: aliceblue;
+}
+
+.card {
+  margin: auto;
+
+  bottom: 3px;
+  width: 12%;
+  margin-top: 0.5rem;
+  text-align: center;
+  justify-content: center;
+  padding-top: 4px;
+  display: grid;
+  gap: 5px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card p {
+  font-size: 15px;
+  color: rgb(104, 92, 92);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+}
+
+.wrapper span {
+  font-size: 35px;
+  border: dotted;
+  cursor: pointer;
+  max-width: 25px;
+  border-radius: 50%;
+}
+
+.input {
+  width: 50%;
+  margin: auto;
+}
+
+#desc {
+  resize: none;
+}
+
+.btn {
+  margin-left: 54rem;
+  width: 8%;
+}
+
+.exit {
+  margin-top: 2px;
+  height: 25px;
+  margin-left: 72%;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: rgb(133, 176, 255);
+  color: rgb(252, 252, 252);
+}
+
+.card p:hover {
+  color: rgb(251, 240, 255);
+}
+
+@media ((max-width:400px)) {
+body{
+  font-size: 12px;
+}
+  .btn {
+    margin-left: 13rem;
+    width: 18%;
+  }
+
+  .card {
+    width: 10rem;
+  }
+}
+
+
+
+.card-text {
+  font-size: 5px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+}
+
+h1 {
+  color: rgb(73, 73, 223);
+}
