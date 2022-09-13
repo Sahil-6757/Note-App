@@ -124,9 +124,10 @@ body {
 }
 
 @media ((max-width:450px)) {
-body{
-  font-size: 12px;
-}
+  body {
+    font-size: 12px;
+  }
+
   .btn {
     margin-left: 13rem;
     width: 18%;
@@ -149,4 +150,15 @@ body{
 
 h1 {
   color: rgb(73, 73, 223);
+}
+
+.trashbtn {
+  position: absolute;
+  font-weight: 900;
+  margin-left: 15rem;
+  color: red
+}
+
+.trashbtn:hover {
+  cursor: pointer;
 }
