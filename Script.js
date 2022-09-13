@@ -4,6 +4,7 @@ let note = document.getElementById("note");
 let btn = document.getElementById("btn");
 let allcard = document.getElementById("allcard");
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
+let trashbtn = document.querySelector("trashbtn");
 
 getnotes();
 
@@ -58,13 +59,14 @@ btn.addEventListener("click", () => {
     console.log(noteinfo);
     getnotes();
 
-    Notification.requestPermission().then(param =>{
-      if(param == "granted"){
-        new Notification("Note Added Successfully.",{
-          icon:"./Image/book.svg",
-        })
+    Notification.requestPermission().then((param) => {
+      if (param == "granted") {
+        new Notification("Note Added Successfully.", {
+          tag: "Thank you",
+          icon: "./Image/book.svg",
+        });
       }
-    })
+    });
   }
 });
 
@@ -72,7 +74,8 @@ function getnotes() {
   let html = "";
   notes.forEach((element, index) => {
     let dom = `<div class="card col-6 col-sm-3 container-fluid" style="width: 18rem;" >
-    <div class="card-body" >
+    <div class="card-body" > 
+    <i class="fa-solid fa-trash trashbtn" id="trash_btn"></i>
       <h5 class="card-title">${element.title}</h5>
       <p class="card-text">${element.description}</p>
       
@@ -82,3 +85,7 @@ function getnotes() {
     allcard.innerHTML = html;
   });
 }
+
+trashbtn.addEventListener("click", () => {
+  alert("Delete button activated");
+});
