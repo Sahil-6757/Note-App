@@ -4,7 +4,7 @@ let note = document.getElementById("note");
 let btn = document.getElementById("btn");
 let allcard = document.getElementById("allcard");
 const notes = JSON.parse(localStorage.getItem("notes") || "[]");
-let trashbtn = document.querySelector("trashbtn");
+let trashbtn = document.querySelector("trash_btn");
 
 getnotes();
 
@@ -17,8 +17,7 @@ card.addEventListener("click", () => {
   note.innerHTML = `<img src="./Image/x-circle.svg" alt="exit" class="exit" id="exit" />
   <div class="mb-3 input">
     <label for="exampleFormControlInput1" class="form-label"
-      >Note Title</label
-    >
+      >Note Title</label>
     <input type="text" required class="form-control" id="exampleFormControlInput1" />
   </div>
   <div class="mb-3 input">
@@ -62,6 +61,8 @@ btn.addEventListener("click", () => {
     Notification.requestPermission().then((param) => {
       if (param == "granted") {
         new Notification("Note Added Successfully.", {
+          vibrate: "true",
+
           tag: "Thank you",
           icon: "./Image/book.svg",
         });
@@ -75,7 +76,7 @@ function getnotes() {
   notes.forEach((element, index) => {
     let dom = `<div class="card col-6 col-sm-3 container-fluid" style="width: 18rem;" >
     <div class="card-body" > 
-    <i class="fa-solid fa-trash trashbtn" id="trash_btn"></i>
+    <i class="fa-solid fa-trash trashbtn" id="trash_btn" onClick="trash(${index})"></i>
       <h5 class="card-title">${element.title}</h5>
       <p class="card-text">${element.description}</p>
       
@@ -86,6 +87,9 @@ function getnotes() {
   });
 }
 
-trashbtn.addEventListener("click", () => {
-  alert("Delete button activated");
-});
+function trash(index) {
+  console.log("I am deleting ", index);
+  notes.splice(index, 1);
+  localStorage.setItem("notes", JSON.stringify(notes));
+  getnotes();
+}
